@@ -1,10 +1,10 @@
-	-Nombre del proyecto
+	##Nombre del proyecto
   DOCUMENTACION AUTOMATICA DOCSTRINGS 
-	-Proposito
+	##Proposito
   Este script busca recopilar todos los docstrings de un proyecto y documentarlos dentro de un documento docx de forma automatica y con un formato normalizado 
-	Requesitos
+	##Requesitos
   Python 3.10 o superior y la libreria python-docx
-	Como ejecutar
+	##Como ejecutar
   para ejecutar este proyecto se debe crear una task en visual studio. Pasos a seguir:
   1. clonar el repositorio en nuestro equipo
   2. poner en la consola del proyecto el comando pip install python-docx  
