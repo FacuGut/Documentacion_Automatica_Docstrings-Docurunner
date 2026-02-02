@@ -23,9 +23,11 @@ Su objetivo es facilitar el mantenimiento documental sin necesidad de editar man
 Instalación:
 
 ```bash
-pip install python-docx```
+pip install python-docx
+```
 
 ---
+
 
 ## **Ejecucion**
 1. Clonar el repositorio en tu equipo
@@ -33,6 +35,37 @@ pip install python-docx```
 3. Abrir Visual Studio Code y presionar Ctrl + Shift + P dentro de la carpeta docrunner para crear una task 
 4. Seleccionar la opción "Open User Tasks", esto abrirá el archivo tasks.json
 5. Pegar el siguiente contenido dentro de tasks.json y reemplazar los valores PATH por la ruta donde tengas este proyecto
-6. En el proyecto a documentar ejecutar la task presionando Ctrl + Shift + P → Tasks: Run Task → Documentar proyecto (DocuRunner)
+```bash
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Documentar proyecto (DocuRunner)",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "-m",
+        "app.main",
+        "${workspaceFolder}",
+        "-o",
+        "${workspaceFolder}/documentacion.docx"
+      ],
+      "options": {
+        "cwd": "PATH",
+        "env": {
+          "PYTHONPATH": "PATH"
+        }
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
+```
+7. En el proyecto a documentar ejecutar la task presionando Ctrl + Shift + P → Tasks: Run Task → Documentar proyecto (DocuRunner)
 
 
