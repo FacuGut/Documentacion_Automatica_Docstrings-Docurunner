@@ -24,3 +24,15 @@ Instalación:
 
 ```bash
 pip install python-docx
+
+---
+
+## **Ejecucion**
+1. Clonar el repositorio en tu equipo
+2. Instalar dependencia python-docx
+3. Abrir Visual Studio Code y presionar Ctrl + Shift + P dentro de la carpeta docrunner para crear una task 
+4. Seleccionar la opción "Open User Tasks", esto abrirá el archivo tasks.json
+5. Pegar el siguiente contenido dentro de tasks.json y reemplazar los valores PATH por la ruta donde tengas este proyecto
+6. En el proyecto a documentar ejecutar la task presionando Ctrl + Shift + P → Tasks: Run Task → Documentar proyecto (DocuRunner)
+
+
