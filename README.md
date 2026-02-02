@@ -68,4 +68,5 @@ pip install python-docx
 ```
 7. En el proyecto a documentar ejecutar la task presionando Ctrl + Shift + P → Tasks: Run Task → Documentar proyecto (DocuRunner)
 
+---
 
