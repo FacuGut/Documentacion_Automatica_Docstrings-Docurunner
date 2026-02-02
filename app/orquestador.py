@@ -1,5 +1,5 @@
 """
-Módulo orquestador.
+Módulo orquestador
 - Orquestar el flujo end-to-end:
   1) Leer config
   2) Buscar archivos .py (src/fs.py)
