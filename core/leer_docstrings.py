@@ -2,8 +2,8 @@
 Módulo de extracción de docstrings.
 - LÓGICA PURA de negocio: extraer docstrings desde el texto (string) de un archivo Python.
 - Recibe código fuente como `str` y devuelve una lista de `DocItem` en orden de aparición.
-- NO lee archivos del disco: eso es trabajo de `infra/fs.py`.
-- NO escribe el .docx: eso es trabajo de `infra/writer_docx.py`.
+- NO lee archivos del disco: eso es trabajo de src/fs.py.
+- NO escribe el .docx: eso es trabajo de src/writer_docx.py.
 """
 
 import ast

@@ -2,10 +2,10 @@
 Módulo orquestador.
 - Orquestar el flujo end-to-end:
   1) Leer config
-  2) Buscar archivos .py (infra/fs.py)
-  3) Leer su contenido (infra/fs.py)
+  2) Buscar archivos .py (src/fs.py)
+  3) Leer su contenido (src/fs.py)
   4) Extraer docstrings del texto (core/leer_docstrings.py)
-  5) Escribir el .docx (infra/writer_docx.py)
+  5) Escribir el .docx (src/writer_docx.py)
 - Registrar logs y devolver la ruta del archivo generado.
 - Punto central de coordinación de la aplicación.
 """
@@ -24,7 +24,7 @@ def generar_documentacion(cfg: Config) -> str:
     Orquesta el flujo:
     - Buscar .py
     - Leer código y extraer docstrings (core)
-    - Escribir DOCX (infra)
+    - Escribir DOCX (src)
     Retorna la ruta absoluta del archivo generado.
     """
     ruta_proyecto = os.path.abspath(cfg.ruta_proyecto)
