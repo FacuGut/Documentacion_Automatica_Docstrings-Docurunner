@@ -5,4 +5,10 @@ param(
 
 $repo = $PSScriptRoot
 $env:PYTHONPATH = $repo
-python -m app.main $Proyecto -o $Salida
+Push-Location $repo
+try {
+  python -m app.main $Proyecto -o $Salida
+}
+finally {
+  Pop-Location
+}

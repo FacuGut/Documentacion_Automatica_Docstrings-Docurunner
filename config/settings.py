@@ -34,6 +34,8 @@ def cargar_config(ruta_base: str, ruta_json: str | None = None) -> Config:
     """
     if ruta_json is None:
         ruta_json = os.path.join(ruta_base, "config", "appsettings.json")
+        if not os.path.exists(ruta_json):
+            ruta_json = os.path.join(ruta_base, "config", "appsetings.json")
 
     data = _leer_json(ruta_json)
 

@@ -5,6 +5,7 @@ Módulo de escritura de documentos `.docx`.
 - No decide qué documentar: solo renderiza lo que le pasa app/orquestador.py.
 """
 import os
+import re
 from typing import Dict, List
 from docx import Document
 from docx.shared import RGBColor
@@ -23,16 +24,21 @@ def escribir_docx_por_archivo(
     azul = RGBColor(*color_con_doc)
     rojo = RGBColor(*color_sin_doc)
 
+    def _limpiar_xml(texto: str) -> str:
+        if not texto:
+            return texto
+        return re.sub(r"[\x00-\x08\x0B\x0C\x0E-\x1F]", "", texto)
+
     for path_abs, items in resultados.items():
         if not items:
             continue
 
-        relativo = os.path.relpath(path_abs, ruta_raiz)
+        relativo = _limpiar_xml(os.path.relpath(path_abs, ruta_raiz))
         doc.add_heading(relativo, level=1)
 
         for it in items:
             heading = doc.add_heading(level=2)
-            run = heading.add_run(it.nombre)
+            run = heading.add_run(_limpiar_xml(it.nombre))
             run.font.bold = True
             run.font.color.rgb = azul if it.docstring else rojo
 
@@ -43,6 +49,6 @@ def escribir_docx_por_archivo(
                 )
             else:
                 for linea in it.docstring.splitlines():
-                    doc.add_paragraph(linea)
+                    doc.add_paragraph(_limpiar_xml(linea))
 
     doc.save(salida_docx)

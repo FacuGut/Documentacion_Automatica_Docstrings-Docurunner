@@ -36,3 +36,4 @@ pip install python-docx
 powershell -ExecutionPolicy Bypass -File "PATH\docurunner.ps1"
 ```
 Ejemplo: powershell -ExecutionPolicy Bypass -File "C:\Users\jmartinez\Desktop\Proyectos\Automatizacion\docurunner.ps1"
+
