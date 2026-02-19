@@ -14,14 +14,13 @@ from config.settings import cargar_config
 from src.logging_conf import configurar_logging
 from app.orquestador import generar_documentacion
 
-
 def parse_args():
     p = argparse.ArgumentParser(
         description="Genera un archivo .docx con los docstrings de un proyecto Python."
     )
     p.add_argument("ruta", nargs="?", default=".", help="Ruta del proyecto a analizar (default: .)")
     p.add_argument("-o", "--output", default=None, help="Archivo .docx de salida")
-    p.add_argument("--config", default=None, help="Ruta a appsettings.json alternativo")
+    p.add_argument("--config", default=None, help="Ruta a appfings.json alternativo")
     p.add_argument("--log", default="INFO", help="Nivel de log (DEBUG, INFO, WARNING, ERROR)")
     p.add_argument("--incluir-paquete", action="store_true", help="Incluye el propio paquete en el análisis")
     return p.parse_args()
